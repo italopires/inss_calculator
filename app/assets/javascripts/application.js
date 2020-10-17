@@ -14,6 +14,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery.slimscroll
+//= require bootstrap-datepicker
 //= require app
 //= require bootstrap.min
+//= require locales/bootstrap-datepicker.pt-BR
 //= require_tree .

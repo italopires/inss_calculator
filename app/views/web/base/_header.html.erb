@@ -1,0 +1,5 @@
+<%= render 'layouts/common/notice' %>
+
+<h1 class="section-title">
+  <span><%= @object.nil? ? @objects.klass.model_name.human(count: 2) : @object.model_name.human %></span>
+</h1>

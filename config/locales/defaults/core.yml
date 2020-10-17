@@ -1,0 +1,9 @@
+pt-BR:
+  core:
+    empty: Nenhum registro encontrado
+    links:
+      actions:
+        title: Ações
+        back: Voltar
+        add: Adicionar
+        edit: Alterar

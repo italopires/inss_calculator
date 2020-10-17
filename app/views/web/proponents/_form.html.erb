@@ -1,0 +1,28 @@
+<div class="box-body">
+  <%= f.input :name, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :cpf, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :birthdate, as: :string, input_html: { class: 'form-control datepicker',
+    value: (l(f.object.birthdate) if f.object.birthdate.present?) },
+    wrapper_html: { class: 'form-group date' } %>
+  <%= f.input :public_place, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :address_number, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :neighborhood, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :cep, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :personal_phone, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :reference_phone, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+  <%= f.input :salary, input_html: { class: 'form-control', autocomplete: 'nope' },
+    wrapper_html: { class: 'form-group' } %>
+</div>
+
+<div class="box-footer">
+  <%= render 'layouts/common/buttons/back', link: proponents_path %>
+  <%= render 'layouts/common/buttons/submit' %>
+</div>

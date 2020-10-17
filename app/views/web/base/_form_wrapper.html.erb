@@ -1,0 +1,13 @@
+<div class="row"> <!-- left column -->
+  <div class="col-md-12"> <!-- general form elements -->
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title"><%= @object.new_record? ? 'Cadastro' : 'Edição' %></h3>
+      </div>
+      <%= simple_form_for(@object) do |f| %>
+        <%= render 'form', f: f %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

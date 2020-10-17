@@ -1,0 +1,9 @@
+pt-BR:
+  web:
+    proponents:
+      index:
+        empty: Vazio
+      edit:
+        subtitle: Alterar
+      new:
+        subtitle: Adicionar

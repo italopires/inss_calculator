@@ -27,33 +27,12 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
-          Page Header
-          <small>Optional description</small>
-        </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-          <li class="active">Here</li>
-        </ol>
+        <%= yield :form_header %>
       </section>
 
       <!-- Main content -->
       <section class="content">
-        <% if notice %>
-          <div class="alert alert-success alert-dismissable">
-            <i class="fa fa-check"></i>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <b><%= notice %></b>
-          </div>
-        <% end %>
 
-        <% if alert %>
-          <div class="alert alert-danger alert-dismissable">
-            <i class="fa fa-ban"></i>
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <b><%= alert %></b>
-          </div>
-        <% end %>
         <%= yield %>
       </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
