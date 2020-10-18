@@ -19,6 +19,7 @@
               <th><%= Proponent.human_attribute_name(:personal_phone) %></th>
               <th><%= Proponent.human_attribute_name(:reference_phone) %></th>
               <th><%= Proponent.human_attribute_name(:salary) %></th>
+              <th><%= Proponent.human_attribute_name(:inss_discount) %></th>
               <th><%= t('core.links.actions.title') %></th>
             </tr>
           </thead>
@@ -35,7 +36,8 @@
                 <td><%= object.cep %></td>
                 <td><%= object.personal_phone %></td>
                 <td><%= object.reference_phone %></td>
-                <td><%= object.salary %></td>
+                <td><%= number_to_currency object.salary %></td>
+                <td><%= number_to_currency object.inss_discount %></td>
                 <td>
                   <%= render 'layouts/common/icon_links/edit', link: edit_proponent_path(object) %>
                   <%= render 'layouts/common/icon_links/destroy', link: proponent_path(object) %>
