@@ -12,7 +12,7 @@ class Web::ProponentsController < Web::BaseController
 
   def update
     @object = object_class.find params[:id]
-    inss_discount = InssCalculator.calculate(@object.salary)
+    inss_discount = InssCalculator.calculate(permitted_params[:salary].to_f)
 
     if @object.update(permitted_params.merge(inss_discount: inss_discount))
       redirect_to after_save_path, notice: t('notices.updated', model: object_class.model_name.human)
