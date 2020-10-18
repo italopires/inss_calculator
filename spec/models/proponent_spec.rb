@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Proponent do
+  context 'relationship' do
+    it { is_expected.to belong_to(:state) }
+    it { is_expected.to belong_to(:city) }
+  end
+
   context 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:cpf) }
