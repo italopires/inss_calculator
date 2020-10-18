@@ -17,5 +17,7 @@ RSpec.describe Proponent do
     it { is_expected.to validate_presence_of(:personal_phone) }
     it { is_expected.to validate_presence_of(:salary) }
     it { is_expected.to validate_presence_of(:inss_discount) }
+    it { is_expected.to validate_presence_of(:state_id) }
+    it { is_expected.to validate_presence_of(:city_id) }
   end
 end

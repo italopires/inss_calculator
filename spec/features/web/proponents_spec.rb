@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'Web::Proponents' do
   given(:user) { create(:user) }
+  given!(:state1) { create(:state, name: 'Estado1') }
+  given!(:state2) { create(:state, name: 'Estado2') }
+  given!(:city1) { create(:city, name: 'Cidade1', state: state1) }
+  given!(:city2) { create(:city, name: 'Cidade2', state: state2) }
 
   before { login_as user }
 
@@ -21,6 +25,8 @@ RSpec.feature 'Web::Proponents' do
     fill_in 'Telefone Pessoal', with: '999999999'
     fill_in 'Salário', with: '3000'
     fill_in 'Telefone de Referência', with: '888888888'
+    select state2.name, from: 'Estado'
+    select city2.name, from: 'Cidade'
     expect(page).to have_field('Desconto INSS', readonly: true, with: '109.24')
     click_button 'Salvar'
 
@@ -36,12 +42,16 @@ RSpec.feature 'Web::Proponents' do
     expect(page).to have_content 'R$ 3.000,00'
     expect(page).to have_content '888888888'
     expect(page).to have_content 'R$ 109,24'
+    expect(page).to have_content state2.name
+    expect(page).to have_content city2.name
     find('#edit').click
 
     fill_in 'Nome', with: 'Proponente 2'
     fill_in 'Salário', with: '2089,6'
     fill_in 'Data de Nascimento', with: I18n.l(Date.current.advance(months: -24))
     expect(page).to have_field('Desconto INSS', readonly: true, with: '94.01')
+    expect(page).to have_select("Estado", text: state2.name)
+    expect(page).to have_select("Cidade", text: city2.name)
     click_button 'Salvar'
 
     expect(page).to have_content 'Proponente atualizado(a) com sucesso.'

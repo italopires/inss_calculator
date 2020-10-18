@@ -11,5 +11,7 @@ FactoryBot.define do
     reference_phone { FFaker::PhoneNumber.phone_number }
     salary { rand(100..3000.0) }
     inss_discount { rand(100..3000.0) }
+    city
+    state
   end
 end

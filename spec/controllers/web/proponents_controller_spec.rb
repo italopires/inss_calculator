@@ -29,7 +29,8 @@ RSpec.describe Web::ProponentsController do
   end
 
   describe 'POST #create' do
-    let(:params) { attributes_for(:proponent) }
+    let(:city) { create(:city) }
+    let(:params) { attributes_for(:proponent, city_id: city.id, state_id: city.state.id) }
 
     it 'creates a new Proponent' do
       expect { post :create, params: { proponent: params } }.to change(Proponent, :count).by(1)

@@ -11,6 +11,8 @@
               <th><%= Proponent.human_attribute_name(:id) %></th>
               <th><%= Proponent.human_attribute_name(:name) %></th>
               <th><%= Proponent.human_attribute_name(:cpf) %></th>
+              <th><%= Proponent.human_attribute_name(:state_id) %></th>
+              <th><%= Proponent.human_attribute_name(:city_id) %></th>
               <th><%= Proponent.human_attribute_name(:birthdate) %></th>
               <th><%= Proponent.human_attribute_name(:public_place) %></th>
               <th><%= Proponent.human_attribute_name(:address_number) %></th>
@@ -29,6 +31,8 @@
                 <td><%= object.id %></td>
                 <td><%= object.name %></td>
                 <td><%= object.cpf %></td>
+                <td><%= object.state.name if object.state.present? %></td>
+                <td><%= object.city.name if object.city.present? %></td>
                 <td><%= l object.birthdate if object.birthdate.present? %></td>
                 <td><%= object.public_place %></td>
                 <td><%= object.address_number %></td>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Web::InssCalculatorsController do
+RSpec.describe Api::V1::InssCalculatorsController, type: :controller do
   let(:user) { create(:user) }
 
   before { sign_in user }

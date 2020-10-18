@@ -1,4 +1,4 @@
-class Web::InssCalculatorsController < ApplicationController
+class Api::V1::InssCalculatorsController < ApplicationController
   def calculate
     inss_calculation = InssCalculator.calculate(params[:salary].to_f)
 
