@@ -18,10 +18,10 @@
 <body class="login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/"><b>Admin</b>LTE</a>
+    <a href="/"><b>CREDI</b>SHOP</a>
   </div><!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">Faça o login para iniciar a sua sessão</p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group has-feedback">
         <%= f.text_field :email, class: 'form-control', autofocus: true %>
@@ -33,19 +33,10 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> Remember Me
-            </label>
-          </div>
-        </div><!-- /.col -->
         <div class="col-xs-4">
           <%= f.submit 'Log in', class: 'btn btn-primary btn-block btn-flat' %>
-
         </div><!-- /.col -->
       </div>
-
     <% end %>
   </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
