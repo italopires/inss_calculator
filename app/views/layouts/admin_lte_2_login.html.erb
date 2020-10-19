@@ -34,7 +34,10 @@
       </div>
       <div class="row">
         <div class="col-xs-4">
-          <%= f.submit 'Log in', class: 'btn btn-primary btn-block btn-flat' %>
+          <%= f.submit 'Entrar', class: 'btn btn-primary btn-block btn-flat' %>
+        </div><!-- /.col -->
+        <div class="col-xs-6 pull-right">
+          <%= link_to 'Cadastrar Usuário', new_user_registration_path, class: 'btn btn-primary btn-block btn-flat' %>
         </div><!-- /.col -->
       </div>
     <% end %>
