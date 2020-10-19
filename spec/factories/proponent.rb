@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :proponent do
     name { FFaker::NameBR.name }
-    cpf { FFaker::NameBR.name }
+    cpf { FFaker::IdentificationBR.cpf }
     birthdate { FFaker::Time.date }
     public_place { FFaker::Address.secondary_address }
     address_number { FFaker::Address.building_number }

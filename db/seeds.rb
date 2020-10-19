@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts '|- States....'
 [
     { name: "Pará" },
@@ -66,4 +59,25 @@ cities = [
 ]
 cities.each do |item|
   City.create!(name: item[0], state: State.find_by(name: item[1]))
+end
+
+puts '|- Proponents....'
+10.times do
+  city = City.find_by(name: cities.sample[0])
+  salary = rand(100..3000.0).round(2)
+  Proponent.create!(
+    name: FFaker::Name.name,
+    cpf: FFaker::IdentificationBR.cpf,
+    birthdate: FFaker::Time.date,
+    public_place: FFaker::Address.secondary_address,
+    address_number: FFaker::Address.building_number,
+    neighborhood: FFaker::Address.neighborhood,
+    cep: FFaker::AddressBR.zip_code,
+    personal_phone: FFaker::PhoneNumber.phone_number,
+    reference_phone: FFaker::PhoneNumber.phone_number,
+    salary: salary,
+    inss_discount: InssCalculator.calculate(salary),
+    state: city.state,
+    city: city
+  )
 end
