@@ -3,22 +3,19 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## Versions
+* rails 5.2.4.4
+* ruby 2.6.3
 
-* Ruby version
+## Task for initial development setup
 
-* System dependencies
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Start rails server
+```
+rails s
+```
